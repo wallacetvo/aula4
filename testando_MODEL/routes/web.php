@@ -20,4 +20,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::match(['get','post'], '/herois', 'HeroiController@index');
-Route::view('/herois/novo', 'herois.create');
+
+Route::view('/herois/novo',     'herois.create');
+//Route::view('/herois/atualiza', 'herois.update');
+
+Route::get('/herois/atualiza', 'HeroiController@update');
+Route::get('/herois/detalhe/{id}', 'HeroiController@mostra');
+
+Route::delete('/herois', 'HeroiController@delete');
